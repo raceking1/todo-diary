@@ -347,7 +347,7 @@ const TodoView: React.FC<{
                     {todos.map(todo => (
                         <div key={todo.id} className="flex items-center gap-3 p-2 rounded-lg bg-background dark:bg-dark-bg">
                             <input type="checkbox" checked={todo.completed} onChange={() => handleToggle(todo.id)} className="w-5 h-5 accent-accent" />
-                            <span className={`flex-1 text-text-main dark:text-dark-text ${todo.completed ? 'line-through text-text-light' : ''}`}>{todo.text}</span>
+                            <span className={`flex-1 text-sm text-text-main dark:text-dark-text ${todo.completed ? 'line-through text-text-light' : ''}`}>{todo.text}</span>
                             <div className="flex items-center gap-1 text-sm">
                                 <input type="number" min="0" value={todo.repeatDays || 0} onChange={e => handleRepeatChange(todo.id, parseInt(e.target.value, 10))} className="w-12 text-center bg-transparent border-b border-gray-300 dark:border-gray-500" />
                                 <span className="text-text-light">일 뒤</span>
@@ -364,7 +364,7 @@ const TodoView: React.FC<{
                         onChange={e => setNewTodoText(e.target.value)}
                         onKeyPress={e => e.key === 'Enter' && handleAdd()}
                         placeholder="할 일을 입력하세요"
-                        className="flex-1 px-4 py-2 border-none bg-background dark:bg-dark-bg rounded-lg focus:ring-2 focus:ring-accent"
+                        className="flex-1 px-4 py-2 border-none bg-background dark:bg-dark-bg rounded-lg focus:ring-2 focus:ring-accent text-sm text-text-main dark:text-dark-text"
                     />
                     <button onClick={handleAdd} className="w-10 h-10 flex items-center justify-center bg-accent text-white rounded-lg hover:bg-accent-dark transition">
                         <Plus className="w-6 h-6"/>
@@ -453,7 +453,7 @@ const DiaryView: React.FC<{
                         onChange={e => onUpdate({ diary: e.target.value })}
                         rows={8}
                         placeholder="오늘 하루는 어땠나요?"
-                        className="w-full p-3 border-none bg-background dark:bg-dark-bg rounded-lg focus:ring-2 focus:ring-accent"
+                        className="w-full p-3 border-none bg-background dark:bg-dark-bg rounded-lg focus:ring-2 focus:ring-accent text-sm text-text-main dark:text-dark-text"
                     ></textarea>
                 </div>
             </div>
