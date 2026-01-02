@@ -1,13 +1,7 @@
-
-const CACHE_NAME = 'linen-diary-cache-v1';
+const CACHE_NAME = 'linen-diary-cache-v2';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/index.tsx',
-  '/App.tsx',
-  '/types.ts',
-  '/utils/storage.ts',
-  '/components/icons.tsx',
   '/manifest.json',
   '/icon-192x192.png',
   '/icon-512x512.png'

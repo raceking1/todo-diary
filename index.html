@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,7 +9,6 @@
     <meta name="theme-color" content="#f9f7f2" />
     <link rel="apple-touch-icon" href="/icon-192x192.png">
 
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
@@ -19,39 +17,22 @@
         font-family: 'Nanum Gothic', sans-serif;
       }
     </style>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              background: '#f9f7f2',
-              accent: '#8d775f',
-              'accent-light': '#d4c8ba',
-              'accent-dark': '#6b5948',
-              'text-main': '#4a4a4a',
-              'text-light': '#9e9e9e',
-              'dark-bg': '#2c2c2c',
-              'dark-surface': '#3a3a3a',
-              'dark-text': '#e0e0e0',
-            },
-          },
-        },
-      }
-    </script>
-  <script type="importmap">
+    <link rel="stylesheet" href="/index.css">
+<script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/"
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.0"
   }
 }
 </script>
 </head>
   <body class="bg-background dark:bg-dark-bg transition-colors duration-300">
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
