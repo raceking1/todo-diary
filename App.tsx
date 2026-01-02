@@ -169,7 +169,7 @@ const LockScreen: React.FC<{ onUnlock: () => void }> = ({ onUnlock }) => {
   }
 
   const pinDots = Array(4).fill(0).map((_, i) => (
-    <div key={i} className={`w-4 h-4 rounded-full transition-colors ${pin.length > i ? 'bg-accent' : 'bg-accent-light/50'} ${error ? '!bg-red-500' : ''}`}></div>
+    <div key={i} className={`w-4 h-4 rounded-full transition-colors ${pin.length > i ? 'bg-accent dark:bg-accent-light' : 'bg-accent-light/50 dark:bg-dark-surface'} ${error ? '!bg-red-500' : ''}`}></div>
   ));
 
   const numpadKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -349,7 +349,7 @@ const TodoView: React.FC<{
                             <input type="checkbox" checked={todo.completed} onChange={() => handleToggle(todo.id)} className="w-5 h-5 accent-accent" />
                             <span className={`flex-1 text-sm text-text-main dark:text-dark-text ${todo.completed ? 'line-through text-text-light' : ''}`}>{todo.text}</span>
                             <div className="flex items-center gap-1 text-sm">
-                                <input type="number" min="0" value={todo.repeatDays || 0} onChange={e => handleRepeatChange(todo.id, parseInt(e.target.value, 10))} className="w-12 text-center bg-transparent border-b border-gray-300 dark:border-gray-500" />
+                                <input type="number" min="0" value={todo.repeatDays || 0} onChange={e => handleRepeatChange(todo.id, parseInt(e.target.value, 10))} className="w-12 text-center bg-transparent border-b border-gray-300 dark:border-gray-500 text-text-main dark:text-dark-text" />
                                 <span className="text-text-light">일 뒤</span>
                                 <button onClick={() => onRepeat(todo)} className="p-1 text-text-light hover:text-accent"><RefreshCw className="w-4 h-4"/></button>
                             </div>
