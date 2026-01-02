@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import type { Mood, TodoItem, DailyData, AppState, ViewMode } from './types';
-import { loadAllData, loadDataByDate, saveDataByDate, saveAllData, getStoredPassword, saveNewPassword, getInitialDailyData } from './utils/storage';
+import { loadAllData, saveAllData, getStoredPassword, saveNewPassword, getInitialDailyData } from './utils/storage';
 import {
   BookOpen, Moon, Sun, Search, Settings, Lock, Calendar, CheckSquare, FileText, GalleryHorizontal,
-  Smile, Laugh, Meh, Frown, Angry, Camera, ImagePlus, Plus, Trash2, RefreshCw, X, ChevronLeft, ChevronRight, ImageOff
+  Smile, Laugh, Meh, Frown, Angry, Camera, Plus, Trash2, RefreshCw, X, ChevronLeft, ChevronRight, ImageOff
 } from './components/icons';
 
 // --- UTILITY FUNCTIONS ---
