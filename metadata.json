@@ -1,0 +1,7 @@
+{
+  "name": "Soft Linen Diary",
+  "description": "A sentimental journal with multi-photo support, to-do lists, and PIN security. All data is stored locally on your device.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
