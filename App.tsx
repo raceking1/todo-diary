@@ -415,8 +415,8 @@ const DiaryView: React.FC<{
                     <div className="flex justify-around p-2 bg-background dark:bg-dark-bg rounded-lg">
                         {moods.map(m => (
                             <button key={m.id} onClick={() => onUpdate({ mood: m.id })} className={`flex flex-col items-center gap-1 p-2 rounded-lg w-16 transition-colors ${dailyData.mood === m.id ? 'bg-accent-light dark:bg-accent-dark' : 'hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
-                                <div className={`w-8 h-8 ${dailyData.mood === m.id ? 'text-accent-dark' : 'text-text-light'}`}>{m.icon}</div>
-                                <span className={`text-xs font-semibold ${dailyData.mood === m.id ? 'text-accent-dark' : 'text-text-light'}`}>{m.label}</span>
+                                <div className={`w-8 h-8 ${dailyData.mood === m.id ? 'text-accent-dark dark:text-dark-text' : 'text-text-light'}`}>{m.icon}</div>
+                                <span className={`text-xs font-semibold ${dailyData.mood === m.id ? 'text-accent-dark dark:text-dark-text' : 'text-text-light'}`}>{m.label}</span>
                             </button>
                         ))}
                     </div>
