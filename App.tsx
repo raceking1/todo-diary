@@ -221,7 +221,7 @@ const Header: React.FC<{
                     {item.icon}
                 </button>
             ))}
-             <button onClick={onLock} className="px-4 py-2 rounded-full bg-white dark:bg-dark-surface shadow-sm text-accent-dark dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-600 transition text-sm font-semibold">
+             <button onClick={onLock} className="h-9 px-4 flex items-center justify-center rounded-full bg-white dark:bg-dark-surface shadow-sm text-accent-dark dark:text-dark-text hover:bg-gray-100 dark:hover:bg-gray-600 transition text-sm font-semibold">
                 잠금
             </button>
         </div>
@@ -251,7 +251,7 @@ const DateNavigator: React.FC<{
         <div className="p-4">
             <div className="flex items-center justify-between bg-white dark:bg-dark-surface p-2 rounded-xl shadow-sm">
                 <button onClick={() => changeDay(-1)} className="p-2 text-accent-dark dark:text-dark-text rounded-full hover:bg-gray-100 dark:hover:bg-gray-600"><ChevronLeft/></button>
-                <div className="flex items-center gap-2 text-lg font-bold text-text-main dark:text-dark-text">
+                <div className="flex items-center gap-2 text-base font-bold text-text-main dark:text-dark-text whitespace-nowrap">
                    {getFormattedDateString(currentDate)}
                     <label htmlFor="date-picker-input" className="p-1 text-accent-dark dark:text-dark-text rounded-full hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
                         <Calendar className="w-5 h-5"/>
@@ -264,7 +264,7 @@ const DateNavigator: React.FC<{
                         className="opacity-0 w-0 h-0 absolute"
                     />
                 </div>
-                <button onClick={() => onDateChange(new Date())} className="px-4 py-2 text-sm font-semibold rounded-lg bg-accent-light/30 dark:bg-gray-600 text-accent-dark dark:text-dark-text hover:bg-accent-light/50 transition">오늘</button>
+                <button onClick={() => onDateChange(new Date())} className="px-3 py-1.5 text-sm font-semibold rounded-lg bg-accent-light/30 dark:bg-gray-600 text-accent-dark dark:text-dark-text hover:bg-accent-light/50 transition">오늘</button>
                 <button onClick={() => changeDay(1)} className="p-2 text-accent-dark dark:text-dark-text rounded-full hover:bg-gray-100 dark:hover:bg-gray-600"><ChevronRight/></button>
             </div>
         </div>
@@ -287,7 +287,7 @@ const ViewTabs: React.FC<{
                 <button
                     key={tab.id}
                     onClick={() => onViewChange(tab.id)}
-                    className={`flex items-center justify-center gap-2 py-2 rounded-lg font-semibold transition-colors ${
+                    className={`flex items-center justify-center gap-2 py-2 text-sm rounded-lg font-semibold transition-colors ${
                         viewMode === tab.id
                         ? 'bg-accent text-white shadow'
                         : 'text-accent-dark dark:text-dark-text hover:bg-accent-light/50'
@@ -340,7 +340,7 @@ const TodoView: React.FC<{
     return (
         <div className="p-4 space-y-4">
             <div className="bg-white dark:bg-dark-surface p-4 rounded-xl shadow-sm">
-                <h2 className="flex items-center gap-2 font-bold text-lg text-text-main dark:text-dark-text mb-4">
+                <h2 className="flex items-center gap-2 font-bold text-base text-text-main dark:text-dark-text mb-4">
                     <CheckSquare className="text-accent"/> 투두 리스트
                 </h2>
                 <div className="space-y-3">
@@ -411,7 +411,7 @@ const DiaryView: React.FC<{
         <div className="p-4 space-y-4">
             <div className="bg-white dark:bg-dark-surface p-4 rounded-xl shadow-sm space-y-4">
                 <div>
-                    <h2 className="flex items-center gap-2 font-bold text-lg text-text-main dark:text-dark-text mb-2"><Smile className="text-accent"/> 오늘의 기분</h2>
+                    <h2 className="flex items-center gap-2 font-bold text-base text-text-main dark:text-dark-text mb-2"><Smile className="text-accent"/> 오늘의 기분</h2>
                     <div className="flex justify-around p-2 bg-background dark:bg-dark-bg rounded-lg">
                         {moods.map(m => (
                             <button key={m.id} onClick={() => onUpdate({ mood: m.id })} className={`flex flex-col items-center gap-1 p-2 rounded-lg w-16 transition-colors ${dailyData.mood === m.id ? 'bg-accent-light dark:bg-accent-dark' : 'hover:bg-gray-200 dark:hover:bg-gray-600'}`}>
@@ -424,7 +424,7 @@ const DiaryView: React.FC<{
 
                 <div>
                     <div className="flex justify-between items-center mb-2">
-                        <h2 className="flex items-center gap-2 font-bold text-lg text-text-main dark:text-dark-text"><Camera className="text-accent"/> 오늘의 기록 ({photoCount}장)</h2>
+                        <h2 className="flex items-center gap-2 font-bold text-base text-text-main dark:text-dark-text"><Camera className="text-accent"/> 오늘의 기록 ({photoCount}장)</h2>
                         <div className="flex gap-2">
                             <button onClick={onCameraOpen} className="px-3 py-1.5 text-sm font-semibold bg-accent-light/50 dark:bg-gray-600 text-accent-dark dark:text-dark-text rounded-md hover:bg-accent-light/80 transition">카메라 촬영</button>
                             <button onClick={() => fileInputRef.current?.click()} className="px-3 py-1.5 text-sm font-semibold bg-accent-light/50 dark:bg-gray-600 text-accent-dark dark:text-dark-text rounded-md hover:bg-accent-light/80 transition">사진 추가</button>
@@ -440,14 +440,14 @@ const DiaryView: React.FC<{
                         )) : (
                            <div className="col-span-full flex flex-col items-center justify-center text-text-light py-8">
                                 <ImageOff className="w-8 h-8 mb-2"/>
-                                <p>사진을 추가하여 오늘을 기록하세요</p>
+                                <p className="text-sm">사진을 추가하여 오늘을 기록하세요</p>
                            </div>
                         )}
                     </div>
                 </div>
 
                 <div>
-                    <h2 className="flex items-center gap-2 font-bold text-lg text-text-main dark:text-dark-text mb-2"><FileText className="text-accent"/> 오늘의 일기</h2>
+                    <h2 className="flex items-center gap-2 font-bold text-base text-text-main dark:text-dark-text mb-2"><FileText className="text-accent"/> 오늘의 일기</h2>
                     <textarea
                         value={dailyData.diary}
                         onChange={e => onUpdate({ diary: e.target.value })}
@@ -476,7 +476,7 @@ const GalleryView: React.FC<{
     return (
         <div className="p-4">
             <div className="bg-white dark:bg-dark-surface p-4 rounded-xl shadow-sm">
-                <h2 className="flex items-center gap-2 font-bold text-lg text-text-main dark:text-dark-text mb-4">
+                <h2 className="flex items-center gap-2 font-bold text-base text-text-main dark:text-dark-text mb-4">
                     <GalleryHorizontal className="text-accent"/> 추억 갤러리
                 </h2>
                 {allPhotos.length > 0 ? (
