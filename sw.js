@@ -1,4 +1,4 @@
-const CACHE_NAME = 'linen-diary-cache-v3';
+const CACHE_NAME = 'linen-diary-cache-v4';
 const urlsToCache = [
   '/',
   '/index.html',
